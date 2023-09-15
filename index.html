@@ -8,54 +8,108 @@
     <body>
         <main>
             <form action="#" id="form">
-                <table>
+                <table border="1">
                     <tr>
-                        <th><label>獲得スコア</label></th>
-                        <td><label id="result" name="result" value="0"></td>
-                    </tr>            
+                        <td colspan="2"><label>防衛側獲得スコア</label></td>
+                        <td><label id="def_result" name="def_result" value="0"></td>
+                        <td colspan="2"><label>攻撃側獲得スコア</label></td>
+                        <td><label id="atk_result" name="atk_result" value="0"></td>   
+                    </tr>
+                    <tr>
+                        <td><label>ユニット</label></td>
+                        <td><label>攻撃側損失数</label></td>
+                        <td><label>攻撃側負傷数</label></td>
+                        <td><label>ユニット</label></td>
+                        <td><label>防衛側損失数</label></td>
+                        <td><label>防衛側負傷数</label></td>
+                    </tr>
                     <tr>
                         <th><label>戦闘機</label></th>
-                        <td><input id="fighter" name="fighter" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_fighter1" name="atk_fighter1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_fighter2" name="atk_fighter2" type="number" value="0" min="0" required></td>
+                        <th><label>戦闘機</label></th>
+                        <td><input id="def_fighter1" name="def_fighter1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_fighter2" name="def_fighter2" type="number" value="0" min="0" required></td>
                     </tr>
                     <tr>
                         <th><label>タイタン</label></th>
-                        <td><input id="titan" name="titan" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_titan1" name="atk_titan1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_titan2" name="atk_titan2" type="number" value="0" min="0" required></td>
+                        <th><label>タイタン</label></th>
+                        <td><input id="def_titan1" name="def_titan1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_titan2" name="def_titan2" type="number" value="0" min="0" required></td>
                     </tr>
                     <tr>
                         <th><label>女帝</label></th>
-                        <td><input id="jyotei" name="jyotei" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_jyotei1" name="atk_jyotei1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_jyotei2" name="atk_jyotei2" type="number" value="0" min="0" required></td>
+                        <th><label>女帝</label></th>
+                        <td><input id="def_jyotei1" name="def_jyotei1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_jyotei2" name="def_jyotei2" type="number" value="0" min="0" required></td>
                     </tr>
                     <tr>
                         <th><label>T12ゾンビ</label></th>
-                        <td><input id="t12zombi" name="t12zombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t12zombi1" name="atk_t12zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t12zombi2" name="atk_t12zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T12ゾンビ</label></th>
+                        <td><input id="def_t12zombi1" name="def_t12zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t12zombi2" name="def_t12zombi2" type="number" value="0" min="0" required></td>
                     </tr>                    
                     <tr>
                         <th><label>T11ゾンビ</label></th>
-                        <td><input id="t11zombi" name="t11zombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t11zombi1" name="atk_t11zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t11zombi2" name="atk_t11zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T11ゾンビ</label></th>
+                        <td><input id="def_t11zombi1" name="def_t11zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t11zombi2" name="def_t11zombi2" type="number" value="0" min="0" required></td>
                     </tr>                    
                     <tr>
                         <th><label>T10ゾンビ</label></th>
-                        <td><input id="t10zombi" name="t10zombi" type="number" value="0" min="0" required></td>
-                    </tr>                    
+                        <td><input id="atk_t10zombi1" name="atk_t10zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t10zombi2" name="atk_t10zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T10ゾンビ</label></th>
+                        <td><input id="def_t10zombi1" name="def_t10zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t10zombi2" name="def_t10zombi2" type="number" value="0" min="0" required></td>
+                    </tr>
                     <tr>
                         <th><label>T9ゾンビ</label></th>
-                        <td><input id="t9zombi" name="t9zombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t9zombi1" name="atk_t9zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t9zombi2" name="atk_t9zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T9ゾンビ</label></th>
+                        <td><input id="def_t9zombi1" name="def_t9zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t9zombi2" name="def_t9zombi2" type="number" value="0" min="0" required></td>
                     </tr>                               
                     <tr>
                         <th><label>T8ゾンビ</label></th>
-                        <td><input id="t8zombi" name="t8zombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t8zombi1" name="atk_t8zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t8zombi2" name="atk_t8zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T8ゾンビ</label></th>
+                        <td><input id="def_t8zombi1" name="def_t8zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t8zombi2" name="def_t8zombi2" type="number" value="0" min="0" required></td>
                     </tr>                    
                     <tr>
                         <th><label>T7ゾンビ</label></th>
-                        <td><input id="t7zombi" name="t7zombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t7zombi1" name="atk_t7zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t7zombi2" name="atk_t7zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T7ゾンビ</label></th>
+                        <td><input id="def_t7zombi1" name="def_t7zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t7zombi2" name="def_t7zombi2" type="number" value="0" min="0" required></td>
                     </tr>                    
                     <tr>
                         <th><label>T6ゾンビ</label></th>
-                        <td><input id="t6zombi" name="t6zombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t6zombi1" name="atk_t6zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t6zombi2" name="atk_t6zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T6ゾンビ</label></th>
+                        <td><input id="def_t6zombi1" name="def_t6zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t6zombi2" name="def_t6zombi2" type="number" value="0" min="0" required></td>
                     </tr>                    
                     <tr>
                         <th><label>T5ゾンビ</label></th>
-                        <td><input id="t5zombi" name="t65ombi" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t5zombi1" name="atk_t5zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t5zombi2" name="atk_t5zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T5ゾンビ</label></th>
+                        <td><input id="def_t5zombi1" name="def_t5zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t5zombi2" name="def_t5zombi2" type="number" value="0" min="0" required></td>
                     </tr>  
                 </table>
                 <div class="buttonwrap">
@@ -80,28 +134,53 @@
             let  scoreT06 = 20;
             let  scoreT05 = 12;
             // 計算結果
+            // 守備側
             // ユニークユニット
-            var  uniqueScore = (Number(document.getElementById('form').fighter.value) + Number(document.getElementById('form').titan.value) + Number(document.getElementById('form').jyotei.value)) * scoreunique;
+            var  defUniqueScore = (Number(document.getElementById('form').atk_fighter1.value) + Number(document.getElementById('form').atk_fighter2.value) + Number(document.getElementById('form').atk_titan1.value) + Number(document.getElementById('form').atk_titan2.value) + Number(document.getElementById('form').atk_jyotei1.value) + Number(document.getElementById('form').atk_jyotei2.value)) * scoreunique;
             // T12ユニット
-            var  t12Score = (Number(document.getElementById('form').t12zombi.value)) * scoreT12;
+            var  defT12Score = (Number(document.getElementById('form').atk_t12zombi1.value) + Number(document.getElementById('form').atk_t12zombi2.value)) * scoreT12;
             // T11ユニット
-            var  t11Score = (Number(document.getElementById('form').t11zombi.value)) * scoreT11;
+            var  defT11Score = (Number(document.getElementById('form').atk_t11zombi1.value) + Number(document.getElementById('form').atk_t11zombi2.value)) * scoreT11;
             // T10ユニット
-            var  t10Score = (Number(document.getElementById('form').t10zombi.value)) * scoreT10;
+            var  defT10Score = (Number(document.getElementById('form').atk_t10zombi1.value) + Number(document.getElementById('form').atk_t10zombi2.value)) * scoreT10;
             // T9ユニット
-            var  t09Score = (Number(document.getElementById('form').t9zombi.value)) * scoreT09;
+            var  defT09Score = (Number(document.getElementById('form').atk_t9zombi1.value) + Number(document.getElementById('form').atk_t9zombi2.value)) * scoreT09;
             // T8ユニット
-            var  t08Score = (Number(document.getElementById('form').t8zombi.value)) * scoreT08;
+            var  defT08Score = (Number(document.getElementById('form').atk_t8zombi1.value) + Number(document.getElementById('form').atk_t8zombi2.value)) * scoreT08;
             // T7ユニット
-            var  t07Score = (Number(document.getElementById('form').t7zombi.value)) * scoreT07;
+            var  defT07Score = (Number(document.getElementById('form').atk_t7zombi1.value) + Number(document.getElementById('form').atk_t7zombi2.value)) * scoreT07;
             // T6ユニット
-            var  t06Score = (Number(document.getElementById('form').t6zombi.value)) * scoreT06;
+            var  defT06Score = (Number(document.getElementById('form').atk_t6zombi1.value) + Number(document.getElementById('form').atk_t6zombi2.value)) * scoreT06;
             // T5ユニット
-            var  t05Score = (Number(document.getElementById('form').t5zombi.value)) * scoreT05;
+            var  defT05Score = (Number(document.getElementById('form').atk_t5zombi1.value) + Number(document.getElementById('form').atk_t5zombi2.value)) * scoreT05;
             // 合計値算出
-            var  resultScore = uniqueScore + t12Score + t11Score + t10Score + t09Score + t08Score + t07Score + t06Score + t05Score;
+            var  defResultScore = defUniqueScore + defT12Score + defT11Score + defT10Score + defT09Score + defT08Score + defT07Score + defT06Score + defT05Score;
             // 結果欄に出力
-            document.getElementById('result').textContent = `${resultScore}`;            
+            document.getElementById('def_result').textContent = `${defResultScore}`;
+
+            // 攻撃側
+            // ユニークユニット
+            var  atkUniqueScore = (Number(document.getElementById('form').def_fighter1.value) + Number(document.getElementById('form').def_fighter2.value) + Number(document.getElementById('form').def_titan1.value) + Number(document.getElementById('form').def_titan2.value) + Number(document.getElementById('form').def_jyotei1.value) + Number(document.getElementById('form').def_jyotei2.value)) * scoreunique;
+            // T12ユニット
+            var  atkT12Score = (Number(document.getElementById('form').def_t12zombi1.value) + Number(document.getElementById('form').def_t12zombi2.value)) * scoreT12;
+            // T11ユニット
+            var  atkT11Score = (Number(document.getElementById('form').def_t11zombi1.value) + Number(document.getElementById('form').def_t11zombi2.value)) * scoreT11;
+            // T10ユニット
+            var  atkT10Score = (Number(document.getElementById('form').def_t10zombi1.value) + Number(document.getElementById('form').def_t10zombi2.value)) * scoreT10;
+            // T9ユニット
+            var  atkT09Score = (Number(document.getElementById('form').def_t9zombi1.value) + Number(document.getElementById('form').def_t9zombi2.value)) * scoreT09;
+            // T8ユニット
+            var  atkT08Score = (Number(document.getElementById('form').def_t8zombi1.value) + Number(document.getElementById('form').def_t8zombi2.value)) * scoreT08;
+            // T7ユニット
+            var  atkT07Score = (Number(document.getElementById('form').def_t7zombi1.value) + Number(document.getElementById('form').def_t7zombi2.value)) * scoreT07;
+            // T6ユニット
+            var  atkT06Score = (Number(document.getElementById('form').def_t6zombi1.value) + Number(document.getElementById('form').def_t6zombi2.value)) * scoreT06;
+            // T5ユニット
+            var  atkT05Score = (Number(document.getElementById('form').def_t5zombi1.value) + Number(document.getElementById('form').def_t5zombi2.value)) * scoreT05;
+            // 合計値算出
+            var  atkResultScore = atkUniqueScore + atkT12Score + atkT11Score + atkT10Score + atkT09Score + atkT08Score + atkT07Score + atkT06Score + atkT05Score;
+            // 結果欄に出力
+            document.getElementById('atk_result').textContent = `${atkResultScore}`;
         }
     </script>
 </html>
