@@ -1,0 +1,71 @@
+form table{
+    border-spacing: 0;
+}
+form td{
+    padding: 10px;
+    border-bottom: 1px solid #EEE;
+}
+form th{
+    padding: 15px;
+    border-bottom: 1px solid #EEE;
+    text-align: left;
+    font-weight: normal;
+    vertical-align: top;
+    width: 5em;
+}
+
+form input[type="text"],form textarea{
+    background: #f2f2f2;
+    border: 1px solid #999;
+    margin: 0 5px;
+    width: 300px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.attention{
+    display: inline-block;
+}
+.smallinput{
+    width: 100px !important;
+}
+.buttonwrap{
+    text-align: center;
+    padding: 20px 0;
+}
+form input[type="button"],form input[type="submit"]{
+    display:inline-block;
+    background:#d13415;
+    padding:10px;
+    text-align:center;
+    color:#FFF;
+    margin:5px;
+    border:1px solid;
+    cursor:pointer;
+    width: 150px;
+}
+form input[type="button"]{
+    background: #f2f2f2;
+    color: #333;
+    border: none;
+}
+form input:invalid {
+    background-color: pink;
+}
+
+@media (max-width:500px){
+    form table,form tr,form th,form td{
+        display: block;
+    }
+    form th{
+        width: auto;
+        border-bottom: none;
+        padding: 13px 10px 0 5em;
+    }
+    .hissu::after,.ninni::after{
+        right: auto;
+        left: 15px;
+    }
+    form input[type="text"],form textarea{
+        width: calc(100% - 10px);
+    }
+}
