@@ -14,7 +14,7 @@
                         <td><label id="def_result" name="def_result" value="0"></td>
                         <td colspan="2"><label>攻撃側獲得スコア</label></td>
                         <td><label id="atk_result" name="atk_result" value="0"></td>   
-                    </tr>
+                    </tr>                    
                     <tr>
                         <td><label>ユニット</label></td>
                         <td><label>攻撃側損失数</label></td>
@@ -23,6 +23,14 @@
                         <td><label>防衛側損失数</label></td>
                         <td><label>防衛側負傷数</label></td>
                     </tr>
+                    <tr>
+                        <td><label>ユニット合計</label></td>
+                        <td><label id="atk_sum1" name="atk_sum1" value="0"></td>
+                        <td><label id="atk_sum2" name="atk_sum2" value="0"></td>
+                        <td><label>ユニット合計</label></td>
+                        <td><label id="def_sum1" name="def_sum1" value="0"></td>
+                        <td><label id="def_sum2" name="def_sum2" value="0"></td>
+                    </tr>                    
                     <tr>
                         <th><label>戦闘機</label></th>
                         <td><input id="atk_fighter1" name="atk_fighter1" type="number" value="0" min="0" required></td>
@@ -110,7 +118,15 @@
                         <th><label>T5ゾンビ</label></th>
                         <td><input id="def_t5zombi1" name="def_t5zombi1" type="number" value="0" min="0" required></td>
                         <td><input id="def_t5zombi2" name="def_t5zombi2" type="number" value="0" min="0" required></td>
-                    </tr>  
+                    </tr>
+                    <tr>
+                        <th><label>T4ゾンビ</label></th>
+                        <td><input id="atk_t4zombi1" name="atk_t4zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t4zombi2" name="atk_t4zombi2" type="number" value="0" min="0" required></td>
+                        <th><label>T4ゾンビ</label></th>
+                        <td><input id="def_t4zombi1" name="def_t4zombi1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t4zombi2" name="def_t4zombi2" type="number" value="0" min="0" required></td>
+                    </tr>
                 </table>
                 <div class="buttonwrap">
                     <input type="submit" value="計算">
@@ -133,50 +149,153 @@
             let  scoreT07 = 30;
             let  scoreT06 = 20;
             let  scoreT05 = 12;
+            let  scoreT04 = 0;
+            let  scoreT03 = 0;
+            let  scoreT02 = 0;
+            let  scoreT01 = 0;
             // 計算結果
             // 守備側
+            // ユニット数算出
+            var defUniqueUnit1 = (Number(document.getElementById('form').atk_fighter1.value) + Number(document.getElementById('form').atk_titan1.value) + Number(document.getElementById('form').atk_jyotei1.value));
+            var defT12Unit1 = (Number(document.getElementById('form').atk_t12zombi1.value));
+            var defT11Unit1 = (Number(document.getElementById('form').atk_t11zombi1.value));
+            var defT10Unit1 = (Number(document.getElementById('form').atk_t10zombi1.value));
+            var defT09Unit1 = (Number(document.getElementById('form').atk_t9zombi1.value));
+            var defT08Unit1 = (Number(document.getElementById('form').atk_t8zombi1.value));
+            var defT07Unit1 = (Number(document.getElementById('form').atk_t7zombi1.value));
+            var defT06Unit1 = (Number(document.getElementById('form').atk_t6zombi1.value));
+            var defT05Unit1 = (Number(document.getElementById('form').atk_t5zombi1.value));
+            var defT04Unit1 = (Number(document.getElementById('form').atk_t4zombi1.value));
+            var defT03Unit1 = 0;
+            var defT02Unit1 = 0;
+            var defT01Unit1 = 0;
+            var defSumUnit1 = defT12Unit1 + defT11Unit1 + defT10Unit1 + defT09Unit1 +defT08Unit1 + defT07Unit1 + defT06Unit1 + defT05Unit1 + defT04Unit1 + defT03Unit1 + defT02Unit1 + defT01Unit1;
+            // 結果欄に出力
+            document.getElementById('atk_sum1').textContent = `${defSumUnit1}`;
+
+            var defUniqueUnit2 = (Number(document.getElementById('form').atk_fighter2.value) + Number(document.getElementById('form').atk_titan2.value) +Number(document.getElementById('form').atk_jyotei2.value));
+            var defT12Unit2 = (Number(document.getElementById('form').atk_t12zombi2.value));
+            var defT11Unit2 = (Number(document.getElementById('form').atk_t11zombi2.value));
+            var defT10Unit2 = (Number(document.getElementById('form').atk_t10zombi2.value));
+            var defT09Unit2 = (Number(document.getElementById('form').atk_t9zombi2.value));
+            var defT08Unit2 = (Number(document.getElementById('form').atk_t8zombi2.value));
+            var defT07Unit2 = (Number(document.getElementById('form').atk_t7zombi2.value));
+            var defT06Unit2 = (Number(document.getElementById('form').atk_t6zombi2.value));
+            var defT05Unit2 = (Number(document.getElementById('form').atk_t5zombi2.value));
+            var defT04Unit2 = (Number(document.getElementById('form').atk_t4zombi2.value));
+            var defT03Unit2 = 0;
+            var defT02Unit2 = 0;
+            var defT01Unit2 = 0;
+            var defSumUnit2 = defT12Unit2 + defT11Unit2 + defT10Unit2 + defT09Unit2 +defT08Unit2 + defT07Unit2 + defT06Unit2 + defT05Unit2 + defT04Unit2 + defT03Unit2 + defT02Unit2 + defT01Unit2;
+            // 結果欄に出力
+            document.getElementById('atk_sum2').textContent = `${defSumUnit2}`;
+
+            var defUniqueUnit = defUniqueUnit1 + defUniqueUnit2;
+            var defT12Unit = defT12Unit1 + defT12Unit2;
+            var defT11Unit = defT11Unit1 + defT11Unit2;
+            var defT10Unit = defT10Unit1 + defT10Unit2;
+            var defT09Unit = defT09Unit1 + defT09Unit2;
+            var defT08Unit = defT08Unit1 + defT08Unit2;
+            var defT07Unit = defT07Unit1 + defT07Unit2;
+            var defT06Unit = defT06Unit1 + defT06Unit2;
+            var defT05Unit = defT05Unit1 + defT05Unit2;
+            var defT04Unit = defT04Unit1 + defT04Unit2;
+            var defT03Unit = 0;
+            var defT02Unit = 0;
+            var defT01Unit = 0;
+
+            // スコア算出
             // ユニークユニット
-            var  defUniqueScore = (Number(document.getElementById('form').atk_fighter1.value) + Number(document.getElementById('form').atk_fighter2.value) + Number(document.getElementById('form').atk_titan1.value) + Number(document.getElementById('form').atk_titan2.value) + Number(document.getElementById('form').atk_jyotei1.value) + Number(document.getElementById('form').atk_jyotei2.value)) * scoreunique;
+            var  defUniqueScore = defUniqueUnit * scoreunique;
             // T12ユニット
-            var  defT12Score = (Number(document.getElementById('form').atk_t12zombi1.value) + Number(document.getElementById('form').atk_t12zombi2.value)) * scoreT12;
+            var  defT12Score = defT12Unit * scoreT12;
             // T11ユニット
-            var  defT11Score = (Number(document.getElementById('form').atk_t11zombi1.value) + Number(document.getElementById('form').atk_t11zombi2.value)) * scoreT11;
+            var  defT11Score = defT11Unit * scoreT11;
             // T10ユニット
-            var  defT10Score = (Number(document.getElementById('form').atk_t10zombi1.value) + Number(document.getElementById('form').atk_t10zombi2.value)) * scoreT10;
+            var  defT10Score = defT10Unit * scoreT10;
             // T9ユニット
-            var  defT09Score = (Number(document.getElementById('form').atk_t9zombi1.value) + Number(document.getElementById('form').atk_t9zombi2.value)) * scoreT09;
+            var  defT09Score = defT09Unit * scoreT09;
             // T8ユニット
-            var  defT08Score = (Number(document.getElementById('form').atk_t8zombi1.value) + Number(document.getElementById('form').atk_t8zombi2.value)) * scoreT08;
+            var  defT08Score = defT08Unit * scoreT08;
             // T7ユニット
-            var  defT07Score = (Number(document.getElementById('form').atk_t7zombi1.value) + Number(document.getElementById('form').atk_t7zombi2.value)) * scoreT07;
+            var  defT07Score = defT07Unit * scoreT07;
             // T6ユニット
-            var  defT06Score = (Number(document.getElementById('form').atk_t6zombi1.value) + Number(document.getElementById('form').atk_t6zombi2.value)) * scoreT06;
+            var  defT06Score = defT06Unit * scoreT06;
             // T5ユニット
-            var  defT05Score = (Number(document.getElementById('form').atk_t5zombi1.value) + Number(document.getElementById('form').atk_t5zombi2.value)) * scoreT05;
+            var  defT05Score = defT05Unit * scoreT05;
             // 合計値算出
             var  defResultScore = defUniqueScore + defT12Score + defT11Score + defT10Score + defT09Score + defT08Score + defT07Score + defT06Score + defT05Score;
             // 結果欄に出力
             document.getElementById('def_result').textContent = `${defResultScore}`;
 
             // 攻撃側
+            // ユニット数算出
+            var atkUniqueUnit1 = (Number(document.getElementById('form').def_fighter1.value) + Number(document.getElementById('form').def_titan1.value) + Number(document.getElementById('form').def_jyotei1.value));
+            var atkT12Unit1 = (Number(document.getElementById('form').def_t12zombi1.value));
+            var atkT11Unit1 = (Number(document.getElementById('form').def_t11zombi1.value));
+            var atkT10Unit1 = (Number(document.getElementById('form').def_t10zombi1.value));
+            var atkT09Unit1 = (Number(document.getElementById('form').def_t9zombi1.value));
+            var atkT08Unit1 = (Number(document.getElementById('form').def_t8zombi1.value));
+            var atkT07Unit1 = (Number(document.getElementById('form').def_t7zombi1.value));
+            var atkT06Unit1 = (Number(document.getElementById('form').def_t6zombi1.value));
+            var atkT05Unit1 = (Number(document.getElementById('form').def_t5zombi1.value));
+            var atkT04Unit1 = (Number(document.getElementById('form').def_t4zombi1.value));
+            var atkT03Unit1 = 0;
+            var atkT02Unit1 = 0;
+            var atkT01Unit1 = 0;
+            var atkSumUnit1 = atkT12Unit1 + atkT11Unit1 + atkT10Unit1 + atkT09Unit1 +atkT08Unit1 + atkT07Unit1 + atkT06Unit1 + atkT05Unit1 + atkT04Unit1 + atkT03Unit1 + atkT02Unit1 + atkT01Unit1;
+            // 結果欄に出力
+            document.getElementById('def_sum1').textContent = `${atkSumUnit1}`;
+
+            var atkUniqueUnit2 = (Number(document.getElementById('form').def_fighter2.value) + Number(document.getElementById('form').def_titan2.value) + Number(document.getElementById('form').def_jyotei2.value));
+            var atkT12Unit2 = (Number(document.getElementById('form').def_t12zombi2.value));
+            var atkT11Unit2 = (Number(document.getElementById('form').def_t11zombi2.value));
+            var atkT10Unit2 = (Number(document.getElementById('form').def_t10zombi2.value));
+            var atkT09Unit2 = (Number(document.getElementById('form').def_t9zombi2.value));
+            var atkT08Unit2 = (Number(document.getElementById('form').def_t8zombi2.value));
+            var atkT07Unit2 = (Number(document.getElementById('form').def_t7zombi2.value));
+            var atkT06Unit2 = (Number(document.getElementById('form').def_t6zombi2.value));
+            var atkT05Unit2 = (Number(document.getElementById('form').def_t5zombi2.value));
+            var atkT04Unit2 = (Number(document.getElementById('form').def_t4zombi2.value));
+            var atkT03Unit2 = 0;
+            var atkT02Unit2 = 0;
+            var atkT01Unit2 = 0;
+            var atkSumUnit2 = atkT12Unit2 + atkT11Unit2 + atkT10Unit2 + atkT09Unit2 +atkT08Unit2 + atkT07Unit2 + atkT06Unit2 + atkT05Unit2 + atkT04Unit2 + atkT03Unit2 + atkT02Unit2 + atkT01Unit2;
+            // 結果欄に出力
+            document.getElementById('def_sum2').textContent = `${atkSumUnit2}`;
+
+            var atkUniqueUnit = atkUniqueUnit1 + atkUniqueUnit2;
+            var atkT12Unit = atkT12Unit1 + atkT12Unit2;
+            var atkT11Unit = atkT11Unit1 + atkT11Unit2;
+            var atkT10Unit = atkT10Unit1 + atkT10Unit2;
+            var atkT09Unit = atkT09Unit1 + atkT09Unit2;
+            var atkT08Unit = atkT08Unit1 + atkT08Unit2;
+            var atkT07Unit = atkT07Unit1 + atkT07Unit2;
+            var atkT06Unit = atkT06Unit1 + atkT06Unit2;
+            var atkT05Unit = atkT05Unit1 + atkT05Unit2;
+            var atkT04Unit = atkT04Unit1 + atkT04Unit2;
+            var atkT03Unit = 0;
+            var atkT02Unit = 0;
+            var atkT01Unit = 0;
+
             // ユニークユニット
-            var  atkUniqueScore = (Number(document.getElementById('form').def_fighter1.value) + Number(document.getElementById('form').def_fighter2.value) + Number(document.getElementById('form').def_titan1.value) + Number(document.getElementById('form').def_titan2.value) + Number(document.getElementById('form').def_jyotei1.value) + Number(document.getElementById('form').def_jyotei2.value)) * scoreunique;
+            var  atkUniqueScore = atkUniqueUnit * scoreunique;
             // T12ユニット
-            var  atkT12Score = (Number(document.getElementById('form').def_t12zombi1.value) + Number(document.getElementById('form').def_t12zombi2.value)) * scoreT12;
+            var  atkT12Score = atkT12Unit * scoreT12;
             // T11ユニット
-            var  atkT11Score = (Number(document.getElementById('form').def_t11zombi1.value) + Number(document.getElementById('form').def_t11zombi2.value)) * scoreT11;
+            var  atkT11Score = atkT11Unit * scoreT11;
             // T10ユニット
-            var  atkT10Score = (Number(document.getElementById('form').def_t10zombi1.value) + Number(document.getElementById('form').def_t10zombi2.value)) * scoreT10;
+            var  atkT10Score = atkT10Unit * scoreT10;
             // T9ユニット
-            var  atkT09Score = (Number(document.getElementById('form').def_t9zombi1.value) + Number(document.getElementById('form').def_t9zombi2.value)) * scoreT09;
+            var  atkT09Score = atkT09Unit * scoreT09;
             // T8ユニット
-            var  atkT08Score = (Number(document.getElementById('form').def_t8zombi1.value) + Number(document.getElementById('form').def_t8zombi2.value)) * scoreT08;
+            var  atkT08Score = atkT08Unit * scoreT08;
             // T7ユニット
-            var  atkT07Score = (Number(document.getElementById('form').def_t7zombi1.value) + Number(document.getElementById('form').def_t7zombi2.value)) * scoreT07;
+            var  atkT07Score = atkT07Unit * scoreT07;
             // T6ユニット
-            var  atkT06Score = (Number(document.getElementById('form').def_t6zombi1.value) + Number(document.getElementById('form').def_t6zombi2.value)) * scoreT06;
+            var  atkT06Score = atkT06Unit * scoreT06;
             // T5ユニット
-            var  atkT05Score = (Number(document.getElementById('form').def_t5zombi1.value) + Number(document.getElementById('form').def_t5zombi2.value)) * scoreT05;
+            var  atkT05Score = atkT05Unit * scoreT05;
             // 合計値算出
             var  atkResultScore = atkUniqueScore + atkT12Score + atkT11Score + atkT10Score + atkT09Score + atkT08Score + atkT07Score + atkT06Score + atkT05Score;
             // 結果欄に出力
