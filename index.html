@@ -1,0 +1,107 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>スコア計算ツール</title>
+        <link rel='stylesheet' id='main-css' href='./css/main.css' type='text/css' media='all' />
+    </head>
+    <body>
+        <main>
+            <form action="#" id="form">
+                <table>
+                    <tr>
+                        <th><label>獲得スコア</label></th>
+                        <td><label id="result" name="result" value="0"></td>
+                    </tr>            
+                    <tr>
+                        <th><label>戦闘機</label></th>
+                        <td><input id="fighter" name="fighter" type="number" value="0" min="0" required></td>
+                    </tr>
+                    <tr>
+                        <th><label>タイタン</label></th>
+                        <td><input id="titan" name="titan" type="number" value="0" min="0" required></td>
+                    </tr>
+                    <tr>
+                        <th><label>女帝</label></th>
+                        <td><input id="jyotei" name="jyotei" type="number" value="0" min="0" required></td>
+                    </tr>
+                    <tr>
+                        <th><label>T12ゾンビ</label></th>
+                        <td><input id="t12zombi" name="t12zombi" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T11ゾンビ</label></th>
+                        <td><input id="t11zombi" name="t11zombi" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T10ゾンビ</label></th>
+                        <td><input id="t10zombi" name="t10zombi" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T9ゾンビ</label></th>
+                        <td><input id="t9zombi" name="t9zombi" type="number" value="0" min="0" required></td>
+                    </tr>                               
+                    <tr>
+                        <th><label>T8ゾンビ</label></th>
+                        <td><input id="t8zombi" name="t8zombi" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T7ゾンビ</label></th>
+                        <td><input id="t7zombi" name="t7zombi" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T6ゾンビ</label></th>
+                        <td><input id="t6zombi" name="t6zombi" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T5ゾンビ</label></th>
+                        <td><input id="t5zombi" name="t65ombi" type="number" value="0" min="0" required></td>
+                    </tr>  
+                </table>
+                <div class="buttonwrap">
+                    <input type="submit" value="計算">
+                </div>
+            </form>        
+        </main>
+    </body>
+    <script>
+        document.getElementById('form').onsubmit = function (event) {
+            event.preventDefault();
+            // スコア定義群
+            // 戦闘機など
+            let  scoreunique = 20000;
+            // 一般ユニット
+            let  scoreT12 = 150;
+            let  scoreT11 = 120;
+            let  scoreT10 = 96;
+            let  scoreT09 = 70;
+            let  scoreT08 = 42;
+            let  scoreT07 = 30;
+            let  scoreT06 = 20;
+            let  scoreT05 = 12;
+            // 計算結果
+            // ユニークユニット
+            var  uniqueScore = (Number(document.getElementById('form').fighter.value) + Number(document.getElementById('form').titan.value) + Number(document.getElementById('form').jyotei.value)) * scoreunique;
+            // T12ユニット
+            var  t12Score = (Number(document.getElementById('form').t12zombi.value)) * scoreT12;
+            // T11ユニット
+            var  t11Score = (Number(document.getElementById('form').t11zombi.value)) * scoreT11;
+            // T10ユニット
+            var  t10Score = (Number(document.getElementById('form').t10zombi.value)) * scoreT10;
+            // T9ユニット
+            var  t09Score = (Number(document.getElementById('form').t9zombi.value)) * scoreT09;
+            // T8ユニット
+            var  t08Score = (Number(document.getElementById('form').t8zombi.value)) * scoreT08;
+            // T7ユニット
+            var  t07Score = (Number(document.getElementById('form').t7zombi.value)) * scoreT07;
+            // T6ユニット
+            var  t06Score = (Number(document.getElementById('form').t6zombi.value)) * scoreT06;
+            // T5ユニット
+            var  t05Score = (Number(document.getElementById('form').t5zombi.value)) * scoreT05;
+            // 合計値算出
+            var  resultScore = uniqueScore + t12Score + t11Score + t10Score + t09Score + t08Score + t07Score + t06Score + t05Score;
+            // 結果欄に出力
+            document.getElementById('result').textContent = `${resultScore}`;            
+        }
+    </script>
+</html>
