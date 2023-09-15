@@ -54,18 +54,9 @@ form input:invalid {
 
 @media (max-width:500px){
     form table,form tr,form th,form td{
-        display: block;
-    }
-    form th{
-        width: auto;
-        border-bottom: none;
-        padding: 13px 10px 0 5em;
-    }
-    .hissu::after,.ninni::after{
-        right: auto;
-        left: 15px;
+        width: 50%;
     }
     form input[type="text"],form textarea{
-        width: calc(100% - 10px);
+        width: 50%;
     }
 }
