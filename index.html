@@ -176,6 +176,38 @@
                         <td><input id="def_t2shredder2" name="def_t2shredder2" type="number" value="0" min="0" required></td>
                     </tr>
                     <tr>
+                        <th><label>T12装甲兵</label></th>
+                        <td><input id="atk_t12armed1" name="atk_t12armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t12armed2" name="atk_t12armed2" type="number" value="0" min="0" required></td>
+                        <th><label>T12装甲兵</label></th>
+                        <td><input id="def_t12armed1" name="def_t12armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t12armed2" name="def_t12armed2" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T10装甲兵</label></th>
+                        <td><input id="atk_t10armed1" name="atk_t10armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t10armed2" name="atk_t10armed2" type="number" value="0" min="0" required></td>
+                        <th><label>T10装甲兵</label></th>
+                        <td><input id="def_t10armed1" name="def_t10armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t10armed2" name="def_t10armed2" type="number" value="0" min="0" required></td>
+                    </tr>                             
+                    <tr>
+                        <th><label>T8装甲兵</label></th>
+                        <td><input id="atk_t8armed1" name="atk_t8armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t8armed2" name="atk_t8armed2" type="number" value="0" min="0" required></td>
+                        <th><label>T8装甲兵</label></th>
+                        <td><input id="def_t8armed1" name="def_t8armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t8armed2" name="def_t8armed2" type="number" value="0" min="0" required></td>
+                    </tr>         
+                    <tr>
+                        <th><label>T6装甲兵</label></th>
+                        <td><input id="atk_t6armed1" name="atk_t6armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t6armed2" name="atk_t6armed2" type="number" value="0" min="0" required></td>
+                        <th><label>T6装甲兵</label></th>
+                        <td><input id="def_t6armed1" name="def_t6armed1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t6armed2" name="def_t6armed2" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
                         <th><label>T11斧兵</label></th>
                         <td><input id="atk_t11infantry1" name="atk_t11infantry1" type="number" value="0" min="0" required></td>
                         <td><input id="atk_t11infantry2" name="atk_t11infantry2" type="number" value="0" min="0" required></td>
@@ -253,13 +285,13 @@
             // 守備側
             // ユニット数算出
             var defUniqueUnit1 = (Number(document.getElementById('form').atk_fighter1.value) + Number(document.getElementById('form').atk_titan1.value) + Number(document.getElementById('form').atk_jyotei1.value));
-            var defT12Unit1 = (Number(document.getElementById('form').atk_t12zombi1.value) + Number(document.getElementById('form').atk_t12shredder1.value));
+            var defT12Unit1 = (Number(document.getElementById('form').atk_t12zombi1.value) + Number(document.getElementById('form').atk_t12shredder1.value) + Number(document.getElementById('form').atk_t12armed1.value));
             var defT11Unit1 = (Number(document.getElementById('form').atk_t11zombi1.value) + Number(document.getElementById('form').atk_t11infantry1.value));
-            var defT10Unit1 = (Number(document.getElementById('form').atk_t10zombi1.value) + Number(document.getElementById('form').atk_t10shredder1.value));
+            var defT10Unit1 = (Number(document.getElementById('form').atk_t10zombi1.value) + Number(document.getElementById('form').atk_t10shredder1.value) + Number(document.getElementById('form').atk_t10armed1.value));
             var defT09Unit1 = (Number(document.getElementById('form').atk_t9zombi1.value) + Number(document.getElementById('form').atk_t9infantry1.value));
-            var defT08Unit1 = (Number(document.getElementById('form').atk_t8zombi1.value) + Number(document.getElementById('form').atk_t8shredder1.value));
+            var defT08Unit1 = (Number(document.getElementById('form').atk_t8zombi1.value) + Number(document.getElementById('form').atk_t8shredder1.value) + Number(document.getElementById('form').atk_t8armed1.value));
             var defT07Unit1 = (Number(document.getElementById('form').atk_t7zombi1.value) + Number(document.getElementById('form').atk_t7infantry1.value));
-            var defT06Unit1 = (Number(document.getElementById('form').atk_t6zombi1.value) + Number(document.getElementById('form').atk_t6shredder1.value));
+            var defT06Unit1 = (Number(document.getElementById('form').atk_t6zombi1.value) + Number(document.getElementById('form').atk_t6shredder1.value) + Number(document.getElementById('form').atk_t6armed1.value));
             var defT05Unit1 = (Number(document.getElementById('form').atk_t5zombi1.value) + Number(document.getElementById('form').atk_t5infantry1.value));
             var defT04Unit1 = (Number(document.getElementById('form').atk_t4zombi1.value) + Number(document.getElementById('form').atk_t4shredder1.value));
             var defT03Unit1 = (Number(document.getElementById('form').atk_t3infantry1.value));
@@ -270,13 +302,13 @@
             document.getElementById('atk_sum1').textContent = `${defSumUnit1}`;
 
             var defUniqueUnit2 = (Number(document.getElementById('form').atk_fighter2.value) + Number(document.getElementById('form').atk_titan2.value) +Number(document.getElementById('form').atk_jyotei2.value));
-            var defT12Unit2 = (Number(document.getElementById('form').atk_t12zombi2.value) + Number(document.getElementById('form').atk_t12shredder2.value));
+            var defT12Unit2 = (Number(document.getElementById('form').atk_t12zombi2.value) + Number(document.getElementById('form').atk_t12shredder2.value) + Number(document.getElementById('form').atk_t12armed2.value));
             var defT11Unit2 = (Number(document.getElementById('form').atk_t11zombi2.value) + Number(document.getElementById('form').atk_t11infantry2.value));
-            var defT10Unit2 = (Number(document.getElementById('form').atk_t10zombi2.value) + Number(document.getElementById('form').atk_t10shredder2.value));
+            var defT10Unit2 = (Number(document.getElementById('form').atk_t10zombi2.value) + Number(document.getElementById('form').atk_t10shredder2.value) + Number(document.getElementById('form').atk_t10armed2.value));
             var defT09Unit2 = (Number(document.getElementById('form').atk_t9zombi2.value) + Number(document.getElementById('form').atk_t9infantry2.value));
-            var defT08Unit2 = (Number(document.getElementById('form').atk_t8zombi2.value) + Number(document.getElementById('form').atk_t8shredder2.value));
+            var defT08Unit2 = (Number(document.getElementById('form').atk_t8zombi2.value) + Number(document.getElementById('form').atk_t8shredder2.value) + Number(document.getElementById('form').atk_t8armed2.value));
             var defT07Unit2 = (Number(document.getElementById('form').atk_t7zombi2.value) + Number(document.getElementById('form').atk_t7infantry2.value));
-            var defT06Unit2 = (Number(document.getElementById('form').atk_t6zombi2.value) + Number(document.getElementById('form').atk_t6shredder2.value));
+            var defT06Unit2 = (Number(document.getElementById('form').atk_t6zombi2.value) + Number(document.getElementById('form').atk_t6shredder2.value) + Number(document.getElementById('form').atk_t6armed2.value));
             var defT05Unit2 = (Number(document.getElementById('form').atk_t5zombi2.value) + Number(document.getElementById('form').atk_t5infantry2.value));
             var defT04Unit2 = (Number(document.getElementById('form').atk_t4zombi2.value) + Number(document.getElementById('form').atk_t4shredder2.value));
             var defT03Unit2 = (Number(document.getElementById('form').atk_t3infantry2.value));
@@ -327,13 +359,13 @@
             // 攻撃側
             // ユニット数算出
             var atkUniqueUnit1 = (Number(document.getElementById('form').def_fighter1.value) + Number(document.getElementById('form').def_titan1.value) + Number(document.getElementById('form').def_jyotei1.value));
-            var atkT12Unit1 = (Number(document.getElementById('form').def_t12zombi1.value) + Number(document.getElementById('form').def_t12shredder1.value));
+            var atkT12Unit1 = (Number(document.getElementById('form').def_t12zombi1.value) + Number(document.getElementById('form').def_t12shredder1.value) + Number(document.getElementById('form').def_t12armed1.value));
             var atkT11Unit1 = (Number(document.getElementById('form').def_t11zombi1.value) + Number(document.getElementById('form').def_t11infantry1.value));
-            var atkT10Unit1 = (Number(document.getElementById('form').def_t10zombi1.value) + Number(document.getElementById('form').def_t10shredder1.value));
+            var atkT10Unit1 = (Number(document.getElementById('form').def_t10zombi1.value) + Number(document.getElementById('form').def_t10shredder1.value) + Number(document.getElementById('form').def_t10armed1.value));
             var atkT09Unit1 = (Number(document.getElementById('form').def_t9zombi1.value) + Number(document.getElementById('form').def_t9infantry1.value));
-            var atkT08Unit1 = (Number(document.getElementById('form').def_t8zombi1.value) + Number(document.getElementById('form').def_t8shredder1.value));
+            var atkT08Unit1 = (Number(document.getElementById('form').def_t8zombi1.value) + Number(document.getElementById('form').def_t8shredder1.value) + Number(document.getElementById('form').def_t8armed1.value));
             var atkT07Unit1 = (Number(document.getElementById('form').def_t7zombi1.value) + Number(document.getElementById('form').def_t7infantry1.value));
-            var atkT06Unit1 = (Number(document.getElementById('form').def_t6zombi1.value) + Number(document.getElementById('form').def_t6shredder1.value));
+            var atkT06Unit1 = (Number(document.getElementById('form').def_t6zombi1.value) + Number(document.getElementById('form').def_t6shredder1.value) + Number(document.getElementById('form').def_t6armed1.value));
             var atkT05Unit1 = (Number(document.getElementById('form').def_t5zombi1.value) + Number(document.getElementById('form').def_t5infantry1.value));
             var atkT04Unit1 = (Number(document.getElementById('form').def_t4zombi1.value) + Number(document.getElementById('form').def_t4shredder1.value));
             var atkT03Unit1 = (Number(document.getElementById('form').def_t3infantry1.value));
@@ -344,13 +376,13 @@
             document.getElementById('def_sum1').textContent = `${atkSumUnit1}`;
 
             var atkUniqueUnit2 = (Number(document.getElementById('form').def_fighter2.value) + Number(document.getElementById('form').def_titan2.value) + Number(document.getElementById('form').def_jyotei2.value));
-            var atkT12Unit2 = (Number(document.getElementById('form').def_t12zombi2.value) + Number(document.getElementById('form').def_t12shredder2.value));
+            var atkT12Unit2 = (Number(document.getElementById('form').def_t12zombi2.value) + Number(document.getElementById('form').def_t12shredder2.value) + Number(document.getElementById('form').def_t12armed2.value));
             var atkT11Unit2 = (Number(document.getElementById('form').def_t11zombi2.value) + Number(document.getElementById('form').def_t11infantry2.value));
-            var atkT10Unit2 = (Number(document.getElementById('form').def_t10zombi2.value) + Number(document.getElementById('form').def_t10shredder2.value));
+            var atkT10Unit2 = (Number(document.getElementById('form').def_t10zombi2.value) + Number(document.getElementById('form').def_t10shredder2.value) + Number(document.getElementById('form').def_t10armed2.value));
             var atkT09Unit2 = (Number(document.getElementById('form').def_t9zombi2.value) + Number(document.getElementById('form').def_t9infantry2.value));
-            var atkT08Unit2 = (Number(document.getElementById('form').def_t8zombi2.value) + Number(document.getElementById('form').def_t8shredder2.value));
+            var atkT08Unit2 = (Number(document.getElementById('form').def_t8zombi2.value) + Number(document.getElementById('form').def_t8shredder2.value) + Number(document.getElementById('form').def_t8armed2.value));
             var atkT07Unit2 = (Number(document.getElementById('form').def_t7zombi2.value) + Number(document.getElementById('form').def_t7infantry2.value));
-            var atkT06Unit2 = (Number(document.getElementById('form').def_t6zombi2.value) + Number(document.getElementById('form').def_t6shredder2.value));
+            var atkT06Unit2 = (Number(document.getElementById('form').def_t6zombi2.value) + Number(document.getElementById('form').def_t6shredder2.value) + Number(document.getElementById('form').def_t6armed2.value));
             var atkT05Unit2 = (Number(document.getElementById('form').def_t5zombi2.value) + Number(document.getElementById('form').def_t5infantry2.value));
             var atkT04Unit2 = (Number(document.getElementById('form').def_t4zombi2.value) + Number(document.getElementById('form').def_t4shredder2.value));
             var atkT03Unit2 = (Number(document.getElementById('form').def_t3infantry2.value));
