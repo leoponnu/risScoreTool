@@ -127,6 +127,54 @@
                         <td><input id="def_t4zombi1" name="def_t4zombi1" type="number" value="0" min="0" required></td>
                         <td><input id="def_t4zombi2" name="def_t4zombi2" type="number" value="0" min="0" required></td>
                     </tr>
+                    <tr>
+                        <th><label>T11斧兵</label></th>
+                        <td><input id="atk_t11infantry1" name="atk_t11infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t11infantry2" name="atk_t11infantry2" type="number" value="0" min="0" required></td>
+                        <th><label>T11斧兵</label></th>
+                        <td><input id="def_t11infantry1" name="def_t11infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t11infantry2" name="def_t11infantry2" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T9斧兵</label></th>
+                        <td><input id="atk_t9infantry1" name="atk_t9infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t9infantry2" name="atk_t9infantry2" type="number" value="0" min="0" required></td>
+                        <th><label>T9斧兵</label></th>
+                        <td><input id="def_t9infantry1" name="def_t9infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t9infantry2" name="def_t9infantry2" type="number" value="0" min="0" required></td>
+                    </tr>                               
+                    <tr>
+                        <th><label>T7斧兵</label></th>
+                        <td><input id="atk_t7infantry1" name="atk_t7infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t7infantry2" name="atk_t7infantry2" type="number" value="0" min="0" required></td>
+                        <th><label>T7斧兵</label></th>
+                        <td><input id="def_t7infantry1" name="def_t7infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t7infantry2" name="def_t7infantry2" type="number" value="0" min="0" required></td>
+                    </tr>                    
+                    <tr>
+                        <th><label>T5斧兵</label></th>
+                        <td><input id="atk_t5infantry1" name="atk_t5infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t5infantry2" name="atk_t5infantry2" type="number" value="0" min="0" required></td>
+                        <th><label>T5斧兵</label></th>
+                        <td><input id="def_t5infantry1" name="def_t5infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t5infantry2" name="def_t5infantry2" type="number" value="0" min="0" required></td>
+                    </tr>
+                    <tr>
+                        <th><label>T3斧兵</label></th>
+                        <td><input id="atk_t3infantry1" name="atk_t3infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t3infantry2" name="atk_t3infantry2" type="number" value="0" min="0" required></td>
+                        <th><label>T3斧兵</label></th>
+                        <td><input id="def_t3infantry1" name="def_t3infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t3infantry2" name="def_t3infantry2" type="number" value="0" min="0" required></td>
+                    </tr>
+                    <tr>
+                        <th><label>T1斧兵</label></th>
+                        <td><input id="atk_t1infantry1" name="atk_t1infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="atk_t1infantry2" name="atk_t1infantry2" type="number" value="0" min="0" required></td>
+                        <th><label>T1斧兵</label></th>
+                        <td><input id="def_t1infantry1" name="def_t1infantry1" type="number" value="0" min="0" required></td>
+                        <td><input id="def_t1infantry2" name="def_t1infantry2" type="number" value="0" min="0" required></td>
+                    </tr>                    
                 </table>
                 <div class="buttonwrap">
                     <input type="submit" value="計算">
@@ -158,34 +206,34 @@
             // ユニット数算出
             var defUniqueUnit1 = (Number(document.getElementById('form').atk_fighter1.value) + Number(document.getElementById('form').atk_titan1.value) + Number(document.getElementById('form').atk_jyotei1.value));
             var defT12Unit1 = (Number(document.getElementById('form').atk_t12zombi1.value));
-            var defT11Unit1 = (Number(document.getElementById('form').atk_t11zombi1.value));
+            var defT11Unit1 = (Number(document.getElementById('form').atk_t11zombi1.value) + Number(document.getElementById('form').atk_t11infantry1.value));
             var defT10Unit1 = (Number(document.getElementById('form').atk_t10zombi1.value));
-            var defT09Unit1 = (Number(document.getElementById('form').atk_t9zombi1.value));
+            var defT09Unit1 = (Number(document.getElementById('form').atk_t9zombi1.value) + Number(document.getElementById('form').atk_t9infantry1.value));
             var defT08Unit1 = (Number(document.getElementById('form').atk_t8zombi1.value));
-            var defT07Unit1 = (Number(document.getElementById('form').atk_t7zombi1.value));
+            var defT07Unit1 = (Number(document.getElementById('form').atk_t7zombi1.value) + Number(document.getElementById('form').atk_t7infantry1.value));
             var defT06Unit1 = (Number(document.getElementById('form').atk_t6zombi1.value));
-            var defT05Unit1 = (Number(document.getElementById('form').atk_t5zombi1.value));
+            var defT05Unit1 = (Number(document.getElementById('form').atk_t5zombi1.value) + Number(document.getElementById('form').atk_t5infantry1.value));
             var defT04Unit1 = (Number(document.getElementById('form').atk_t4zombi1.value));
-            var defT03Unit1 = 0;
+            var defT03Unit1 = Number(document.getElementById('form').atk_t3infantry1.value);
             var defT02Unit1 = 0;
-            var defT01Unit1 = 0;
+            var defT01Unit1 = Number(document.getElementById('form').atk_t1infantry1.value);
             var defSumUnit1 = defT12Unit1 + defT11Unit1 + defT10Unit1 + defT09Unit1 +defT08Unit1 + defT07Unit1 + defT06Unit1 + defT05Unit1 + defT04Unit1 + defT03Unit1 + defT02Unit1 + defT01Unit1;
             // 結果欄に出力
             document.getElementById('atk_sum1').textContent = `${defSumUnit1}`;
 
             var defUniqueUnit2 = (Number(document.getElementById('form').atk_fighter2.value) + Number(document.getElementById('form').atk_titan2.value) +Number(document.getElementById('form').atk_jyotei2.value));
             var defT12Unit2 = (Number(document.getElementById('form').atk_t12zombi2.value));
-            var defT11Unit2 = (Number(document.getElementById('form').atk_t11zombi2.value));
+            var defT11Unit2 = (Number(document.getElementById('form').atk_t11zombi2.value) + Number(document.getElementById('form').atk_t11infantry2.value));
             var defT10Unit2 = (Number(document.getElementById('form').atk_t10zombi2.value));
-            var defT09Unit2 = (Number(document.getElementById('form').atk_t9zombi2.value));
+            var defT09Unit2 = (Number(document.getElementById('form').atk_t9zombi2.value) + Number(document.getElementById('form').atk_t9infantry2.value));
             var defT08Unit2 = (Number(document.getElementById('form').atk_t8zombi2.value));
-            var defT07Unit2 = (Number(document.getElementById('form').atk_t7zombi2.value));
+            var defT07Unit2 = (Number(document.getElementById('form').atk_t7zombi2.value) + Number(document.getElementById('form').atk_t7infantry2.value));
             var defT06Unit2 = (Number(document.getElementById('form').atk_t6zombi2.value));
-            var defT05Unit2 = (Number(document.getElementById('form').atk_t5zombi2.value));
+            var defT05Unit2 = (Number(document.getElementById('form').atk_t5zombi2.value) + Number(document.getElementById('form').atk_t5infantry2.value));
             var defT04Unit2 = (Number(document.getElementById('form').atk_t4zombi2.value));
-            var defT03Unit2 = 0;
+            var defT03Unit2 = (Number(document.getElementById('form').atk_t3infantry2.value));
             var defT02Unit2 = 0;
-            var defT01Unit2 = 0;
+            var defT01Unit2 = (Number(document.getElementById('form').atk_t1infantry2.value));
             var defSumUnit2 = defT12Unit2 + defT11Unit2 + defT10Unit2 + defT09Unit2 +defT08Unit2 + defT07Unit2 + defT06Unit2 + defT05Unit2 + defT04Unit2 + defT03Unit2 + defT02Unit2 + defT01Unit2;
             // 結果欄に出力
             document.getElementById('atk_sum2').textContent = `${defSumUnit2}`;
@@ -232,34 +280,34 @@
             // ユニット数算出
             var atkUniqueUnit1 = (Number(document.getElementById('form').def_fighter1.value) + Number(document.getElementById('form').def_titan1.value) + Number(document.getElementById('form').def_jyotei1.value));
             var atkT12Unit1 = (Number(document.getElementById('form').def_t12zombi1.value));
-            var atkT11Unit1 = (Number(document.getElementById('form').def_t11zombi1.value));
+            var atkT11Unit1 = (Number(document.getElementById('form').def_t11zombi1.value) + Number(document.getElementById('form').def_t11infantry1.value));
             var atkT10Unit1 = (Number(document.getElementById('form').def_t10zombi1.value));
-            var atkT09Unit1 = (Number(document.getElementById('form').def_t9zombi1.value));
+            var atkT09Unit1 = (Number(document.getElementById('form').def_t9zombi1.value) + Number(document.getElementById('form').def_t9infantry1.value));
             var atkT08Unit1 = (Number(document.getElementById('form').def_t8zombi1.value));
-            var atkT07Unit1 = (Number(document.getElementById('form').def_t7zombi1.value));
+            var atkT07Unit1 = (Number(document.getElementById('form').def_t7zombi1.value) + Number(document.getElementById('form').def_t7infantry1.value));
             var atkT06Unit1 = (Number(document.getElementById('form').def_t6zombi1.value));
-            var atkT05Unit1 = (Number(document.getElementById('form').def_t5zombi1.value));
+            var atkT05Unit1 = (Number(document.getElementById('form').def_t5zombi1.value) + Number(document.getElementById('form').def_t5infantry1.value));
             var atkT04Unit1 = (Number(document.getElementById('form').def_t4zombi1.value));
-            var atkT03Unit1 = 0;
+            var atkT03Unit1 = (Number(document.getElementById('form').def_t3infantry1.value));
             var atkT02Unit1 = 0;
-            var atkT01Unit1 = 0;
+            var atkT01Unit1 = (Number(document.getElementById('form').def_t1infantry1.value));
             var atkSumUnit1 = atkT12Unit1 + atkT11Unit1 + atkT10Unit1 + atkT09Unit1 +atkT08Unit1 + atkT07Unit1 + atkT06Unit1 + atkT05Unit1 + atkT04Unit1 + atkT03Unit1 + atkT02Unit1 + atkT01Unit1;
             // 結果欄に出力
             document.getElementById('def_sum1').textContent = `${atkSumUnit1}`;
 
             var atkUniqueUnit2 = (Number(document.getElementById('form').def_fighter2.value) + Number(document.getElementById('form').def_titan2.value) + Number(document.getElementById('form').def_jyotei2.value));
             var atkT12Unit2 = (Number(document.getElementById('form').def_t12zombi2.value));
-            var atkT11Unit2 = (Number(document.getElementById('form').def_t11zombi2.value));
+            var atkT11Unit2 = (Number(document.getElementById('form').def_t11zombi2.value) + Number(document.getElementById('form').def_t11infantry2.value));
             var atkT10Unit2 = (Number(document.getElementById('form').def_t10zombi2.value));
-            var atkT09Unit2 = (Number(document.getElementById('form').def_t9zombi2.value));
+            var atkT09Unit2 = (Number(document.getElementById('form').def_t9zombi2.value) + Number(document.getElementById('form').def_t9infantry2.value));
             var atkT08Unit2 = (Number(document.getElementById('form').def_t8zombi2.value));
-            var atkT07Unit2 = (Number(document.getElementById('form').def_t7zombi2.value));
+            var atkT07Unit2 = (Number(document.getElementById('form').def_t7zombi2.value) + Number(document.getElementById('form').def_t7infantry2.value));
             var atkT06Unit2 = (Number(document.getElementById('form').def_t6zombi2.value));
-            var atkT05Unit2 = (Number(document.getElementById('form').def_t5zombi2.value));
+            var atkT05Unit2 = (Number(document.getElementById('form').def_t5zombi2.value) + Number(document.getElementById('form').def_t5infantry2.value));
             var atkT04Unit2 = (Number(document.getElementById('form').def_t4zombi2.value));
-            var atkT03Unit2 = 0;
+            var atkT03Unit2 = (Number(document.getElementById('form').def_t3infantry2.value));
             var atkT02Unit2 = 0;
-            var atkT01Unit2 = 0;
+            var atkT01Unit2 = (Number(document.getElementById('form').def_t1infantry2.value));
             var atkSumUnit2 = atkT12Unit2 + atkT11Unit2 + atkT10Unit2 + atkT09Unit2 +atkT08Unit2 + atkT07Unit2 + atkT06Unit2 + atkT05Unit2 + atkT04Unit2 + atkT03Unit2 + atkT02Unit2 + atkT01Unit2;
             // 結果欄に出力
             document.getElementById('def_sum2').textContent = `${atkSumUnit2}`;
