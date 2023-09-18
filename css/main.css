@@ -1,3 +1,7 @@
+.nowrap ,form th,form td.form input[type="text"],form textarea{
+    white-space: nowrap;
+}
+
 table{
     width: 100%;
     border-collapse: collapse;
@@ -54,11 +58,5 @@ form input:invalid {
 @media screen and (max-width:640px) {
     .scroll {
         overflow-x: auto;
-    }
-    form table,form tr,form th,form td{
-        width: 50%;
-    }
-    form input[type="text"],form textarea{
-        width: 50%;
     }
 }
