@@ -10,11 +10,33 @@
             <form action="#" id="form">
                 <table border="1">
                     <tr>
+                        <th colspan="2"><label>累計防衛側獲得スコア</label></td>
+                        <td><label id="def_all_result" name="def_all_result" value="0"></td>
+                        <th colspan="2"><label>累計攻撃側獲得スコア</label></td>
+                        <td><label id="atk_all_result" name="atk_all_result" value="0"></td>   
+                    </tr>
+                    <tr>
+                        <th><lthabel>ユニット</label></td>
+                        <th><label>累計攻撃側損失数</label></td>
+                        <th><label>累計攻撃側負傷数</label></td>
+                        <th><label>ユニット</label></td>
+                        <th><label>累計防衛側損失数</label></td>
+                        <th><label>累計防衛側負傷数</label></td>
+                    </tr>
+                    <tr>
+                        <th><label>ユニット合計</label></td>
+                        <td><label id="atk_all_sum1" name="atk_all_sum1" value="0"></td>
+                        <td><label id="atk_all_sum2" name="atk_all_sum2" value="0"></td>
+                        <th><label>ユニット合計</label></td>
+                        <td><label id="def_all_sum1" name="def_all_sum1" value="0"></td>
+                        <td><label id="def_all_sum2" name="def_all_sum2" value="0"></td>
+                    </tr>  
+                    <tr>
                         <th colspan="2"><label>防衛側獲得スコア</label></td>
                         <td><label id="def_result" name="def_result" value="0"></td>
                         <th colspan="2"><label>攻撃側獲得スコア</label></td>
                         <td><label id="atk_result" name="atk_result" value="0"></td>   
-                    </tr>                    
+                    </tr>                                       
                     <tr>
                         <th><lthabel>ユニット</label></td>
                         <th><label>攻撃側損失数</label></td>
@@ -657,14 +679,14 @@
                     </tr>
                 </table>
                 <div class="buttonwrap">
-                    <input type="submit" value="計算">
+                    <input type="button" value="現在値計算" onclick="calcurateData()">
+                    <input type="submit" value="次データ入力" onclick="nextData()">
                 </div>
             </form>        
         </main>
     </body>
     <script>
-        document.getElementById('form').onsubmit = function (event) {
-            event.preventDefault();
+        function calcurateData(){
             // スコア定義群
             // 戦闘機など
             let  scoreunique = 20000;
@@ -946,5 +968,30 @@
             // 結果欄に出力
             document.getElementById('atk_result').textContent = `${atkResultScore}`;
         }
+
+        function nextData(){
+            // 累計値更新
+            // 防衛スコア更新
+            var defAllScore = Number(document.getElementById('def_all_result').textContent) + Number(document.getElementById('def_result').textContent)
+            // 攻撃損失数更新
+            var atkAllSum1 = Number(document.getElementById('atk_all_sum1').textContent) + Number(document.getElementById('atk_sum1').textContent)
+            // 攻撃負傷数更新
+            var atkAllSum2 = Number(document.getElementById('atk_all_sum2').textContent) + Number(document.getElementById('atk_sum2').textContent)
+            // 攻撃スコア更新
+            var atkAllScore = Number(document.getElementById('atk_all_result').textContent) + Number(document.getElementById('atk_result').textContent)
+            // 防衛損失数更新
+            var defAllSum1 = Number(document.getElementById('def_all_sum1').textContent) + Number(document.getElementById('def_sum1').textContent)
+            // 防衛負傷数更新
+            var defAllSum2 = Number(document.getElementById('def_all_sum2').textContent) + Number(document.getElementById('def_sum2').textContent)
+            // 入力データクリア
+            document.getElementById('form').reset();
+            // 累計データ更新
+            document.getElementById('def_all_result').textContent = `${defAllScore}`;
+            document.getElementById('atk_all_sum1').textContent = `${atkAllSum1}`;
+            document.getElementById('atk_all_sum2').textContent = `${atkAllSum2}`;
+            document.getElementById('atk_all_result').textContent = `${atkAllScore}`;
+            document.getElementById('def_all_sum1').textContent = `${defAllSum1}`;
+            document.getElementById('def_all_sum2').textContent = `${defAllSum2}`;
+        }   
     </script>
 </html>
